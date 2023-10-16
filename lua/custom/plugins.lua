@@ -1,16 +1,6 @@
 local plugins = {
   {
-    'lervag/vimtex',
-    config = function( )
-      vim.cmd("filetype plugin indent on")
-      vim.cmd("syntax enable")
-      vim.g.vimtex_view_method = 'zathura'
-      vim.g.vimtex_compiler_method = 'latexmk'
-      vim.cmd("set conceallevel=1")
-    end
-  },
-  {
-    'williamboman/mason.nvim',
+    "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
         "gopls",
@@ -18,22 +8,39 @@ local plugins = {
     },
   },
   {
-    'neovim/nvim-lspconfig',
+    "neovim/nvim-lspconfig",
     config = function()
-      require 'plugins.configs.lspconfig'
-      require 'custom.configs.lspconfig'
+      require "plugins.configs.lspconfig"
+      require "custom.configs.lspconfig"
+    end,
+  },
+  {
+    "stevearc/conform.nvim",
+    lazy = false,
+    config = function()
+      require "custom.configs.conform"
+    end,
+  },
+  {
+    "lervag/vimtex",
+    config = function()
+      vim.cmd("filetype plugin indent on")
+      vim.cmd("syntax enable")
+      vim.g.vimtex_view_method = "zathura"
+      vim.g.vimtex_compiler_method = "latexmk"
+      vim.cmd("set conceallevel=1")
     end
   },
   {
-    'mfussenegger/nvim-dap',
+    "mfussenegger/nvim-dap",
   },
   {
-    'leoluz/nvim-dap-go',
+    "leoluz/nvim-dap-go",
     ft = "go",
-    dependencies = 'mfussenegger/nvim-dap',
+    dependencies = "mfussenegger/nvim-dap",
     config = function(_, opts)
       require("dap-go").setup(opts)
-      require('core.utils').load_mappings("dap_go")
+      require("core.utils").load_mappings("dap_go")
     end,
   },
   {
