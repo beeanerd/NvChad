@@ -1,11 +1,9 @@
 local plugins = {
   {
     "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "gopls",
-      },
-    },
+    opts = function()
+      return require("custom.configs.mason")
+    end,
   },
   {
     "neovim/nvim-lspconfig",
