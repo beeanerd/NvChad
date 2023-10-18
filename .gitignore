@@ -5,3 +5,5 @@ coc-settings.json
 .luarc.json
 lazy-lock.json
 after
+
+lua/custom/configs/vimtex.lua

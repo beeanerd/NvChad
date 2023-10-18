@@ -23,11 +23,7 @@ local plugins = {
     "lervag/vimtex",
     ft = "tex",
     config = function()
-      vim.cmd("filetype plugin indent on")
-      vim.cmd("syntax enable")
-      vim.g.vimtex_view_method = "zathura"
-      vim.g.vimtex_compiler_method = "latexmk"
-      vim.cmd("set conceallevel=1")
+      require "custom.configs.vimtex"
     end
   },
   {
