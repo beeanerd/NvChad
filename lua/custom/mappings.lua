@@ -50,4 +50,24 @@ M.gopher = {
   }
 }
 
+M.abc = {
+  v = {
+    ["J"] = {":m '>+1<CR>gv=gv", "Swap lines down"},
+    ["K"] = {":m '<-2<CR>gv=gv", "Swap lines up"},
+  },
+  n = {
+    ["J"] = {"mzJ`z", "Combine lines"},
+    ["<C-d>"] = {"<C-d>zz", "Move screen down and center"},
+    ["<C-u>"] = {"<C-u>zz", "Move screen up and center"},
+    ["n"] = {"nzzzv", "Show previous search and go to first"},
+    ["N"] = {"Nzzzv", "Show previous search and go to last"},
+    ["<leader>Y"] = {"[[\"+Y]]", "idk"},
+    ["<leader>d"] = {"[[_d]]", "idk2"}
+  },
+
+  x = {
+    ["<leader>p"] = {"[[\"dP]]", "idk3"}
+  }
+}
+
 return M
