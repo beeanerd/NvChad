@@ -4,6 +4,7 @@ require("conform").setup({
     lua = { "stylua" },
     python = { "isort", "black" },
     javascript = { { "prettierd", "prettier" } },
+    c = {"clang-format"},
   },
   format_on_save = {
     timeout_ms = 500,
