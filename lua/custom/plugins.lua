@@ -6,6 +6,13 @@ local plugins = {
     end,
   },
   {
+    "ThePrimeagen/harpoon",
+  },
+  {
+    "tpope/vim-fugitive",
+    lazy = false,
+  },
+  {
     "neovim/nvim-lspconfig",
     config = function()
       require "plugins.configs.lspconfig"
