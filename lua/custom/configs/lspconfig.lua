@@ -91,6 +91,13 @@ https://clangd.llvm.org/installation.html
   },
 }
 
+lspconfig.lua_ls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    cmd = {"lua-language-server"},
+    filetypes = {"lua"}
+}
+
 lspconfig.gopls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
