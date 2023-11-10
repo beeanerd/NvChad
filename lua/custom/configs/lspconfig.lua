@@ -98,6 +98,12 @@ lspconfig.lua_ls.setup {
     filetypes = {"lua"}
 }
 
+lspconfig.pylsp.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = {"python"},
+}
+
 lspconfig.gopls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
