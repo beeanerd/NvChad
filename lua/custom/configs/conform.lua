@@ -2,7 +2,7 @@ require("conform").setup({
   formatters_by_ft = {
     go = { "gofumpt", {"golines"}, {"goimports-reviser", "goimports"} },
     lua = { "stylua" },
-    python = { "isort", "black" },
+    python = { "isort", "black"},
     javascript = { { "prettierd", "prettier" } },
     c = {"clang-format"},
   },

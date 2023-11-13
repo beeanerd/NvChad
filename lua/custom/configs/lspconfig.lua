@@ -98,7 +98,7 @@ lspconfig.lua_ls.setup {
     filetypes = {"lua"}
 }
 
-lspconfig.pylsp.setup {
+lspconfig.pyright.setup {
     on_attach = on_attach,
     capabilities = capabilities,
     filetypes = {"python"},
