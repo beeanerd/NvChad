@@ -104,6 +104,12 @@ lspconfig.pyright.setup {
     filetypes = {"python"},
 }
 
+lspconfig.r_language_server.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = {"r"},
+}
+
 lspconfig.gopls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
