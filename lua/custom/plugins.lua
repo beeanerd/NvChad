@@ -6,6 +6,20 @@ local plugins = {
         end,
     },
     {
+        "jackMort/ChatGPT.nvim",
+        event = "VeryLazy",
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim"
+        },
+        config = function()
+            require("chatgpt").setup({
+                api_key_cmd = "pass show api/tokens/openai",
+            })
+        end,
+    },
+    {
         "christoomey/vim-tmux-navigator",
         lazy = false,
     },
@@ -14,22 +28,11 @@ local plugins = {
     },
     {
         "nvim-neorg/neorg",
-        lazy = false,
-        dependencies = { "nvim-lua/plenary.nvim" },
+        ft = "norg",
+        dependencies = { {"nvim-lua/plenary.nvim" }, { "nvim-neorg/neorg-telescope" } },
+        build = ":Neorg sync-parsers",
         config = function()
-            require("neorg").setup {
-                load = {
-                    ["core.defaults"] = {}, -- Loads default behaviour
-                    ["core.concealer"] = {}, -- Adds pretty icons to your documents
-                    ["core.dirman"] = { -- Manages Neorg workspaces
-                        config = {
-                            workspaces = {
-                                notes = "~/notes",
-                            },
-                        },
-                    },
-                },
-            }
+            require "custom.configs.neorg"
         end,
     },
     {
